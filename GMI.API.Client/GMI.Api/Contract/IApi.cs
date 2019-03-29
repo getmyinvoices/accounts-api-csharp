@@ -24,7 +24,7 @@ namespace GMI.Api.Contract {
     /// Returns the company
     /// </summary>
     /// <param name="request">Request is used to apply a filter</param>
-    void GetCompany(GetCompanyRequest request);
+    Company GetCompany(GetCompanyRequest request);
     /// <summary>
     /// Returns a list of documents using the provided filters
     /// </summary>
@@ -41,7 +41,7 @@ namespace GMI.Api.Contract {
     /// Returns a list of countries
     /// </summary>
     /// <param name="request"></param>
-    void GetCountries(GetCountriesRequest request);
+    IEnumerable<Country> GetCountries(GetCountriesRequest request);
     /// <summary>
     /// Returns a list of currencies
     /// </summary>

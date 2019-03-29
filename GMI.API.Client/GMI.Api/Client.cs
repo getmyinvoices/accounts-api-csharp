@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using GMI.Api.Contract;
+using GMI.Api.Contract.Data.Attachment;
 using GMI.Api.Contract.Data.Company;
 using GMI.Api.Contract.Data.Country;
 using GMI.Api.Contract.Data.Currency;
@@ -13,7 +14,6 @@ namespace GMI.Api {
   /// Client Client
   /// </summary>
   public class Client : IApi {
-    private readonly string _baseUrl;
     private readonly string _apiKey;
     private readonly RestClient _client;
 
@@ -23,9 +23,8 @@ namespace GMI.Api {
     /// <param name="baseUrl">baseURL from the api</param>
     /// <param name="apiKey">the api key</param>
     public Client(string baseUrl, string apiKey) {
-      this._baseUrl = baseUrl;
       this._apiKey = apiKey;
-      this._client = new RestClient(this._baseUrl);
+      this._client = new RestClient(baseUrl);
     }
 
     private RestRequest getRequest(string method, object postBody) {
@@ -40,21 +39,23 @@ namespace GMI.Api {
 
     /// <inheritdoc />
     public bool GetApiStatus() {
-      RestRequest request = this.getRequest("/apiStatus", new BaseRequest(this._apiKey));
+      RestRequest request = getRequest("/apiStatus", new BaseRequest(this._apiKey));
       IRestResponse<ApiStatus> result = this._client.Execute<ApiStatus>(request);
       return result.Data.Success;
     }
 
     /// <inheritdoc />
     public IEnumerable<CompanyListElement> ListCompanies(ListCompaniesRequest request) {
-      RestRequest restRequest = this.getRequest("/listCompanies", request);
+      RestRequest restRequest = getRequest("/listCompanies", request);
       IRestResponse<List<CompanyListElement>> result = this._client.Execute<List<CompanyListElement>>(restRequest);
       return result.Data;
     }
 
     /// <inheritdoc />
-    public void GetCompany(GetCompanyRequest request) {
-      throw new System.NotImplementedException();
+    public Company GetCompany(GetCompanyRequest request) {
+      RestRequest restRequest = getRequest("/getCompany", request);
+      IRestResponse<Company> result = this._client.Execute<Company>(restRequest);
+      return result.Data;
     }
     /// <inheritdoc />
     public void ListDocuments(ListDocumentsRequest request) {
@@ -73,8 +74,10 @@ namespace GMI.Api {
       throw new System.NotImplementedException();
     }
     /// <inheritdoc />
-    public void GetCountries(GetCountriesRequest request) {
-      throw new System.NotImplementedException();
+    public IEnumerable<Country> GetCountries(GetCountriesRequest request) {
+      RestRequest restRequest = getRequest("/listCompanies", request);
+      IRestResponse<List<Country>> result = this._client.Execute<List<Country>>(restRequest);
+      return result.Data;
     }
     /// <inheritdoc />
     public void GetCurrencies(GetCurrenciesRequest request) {
@@ -93,8 +96,9 @@ namespace GMI.Api {
       throw new System.NotImplementedException();
     }
     /// <inheritdoc />
-    public void GetAttachmentList() {
-      throw new System.NotImplementedException();
+    public void GetAttachmentList(ListAttachmentsRequest request) {
+      RestRequest restRequest = getRequest("/listAttachments", request);
+      IRestResponse<List<Country>> result = this._client.Execute<List<Country>>(restRequest);
     }
     /// <inheritdoc />
     public void UploadAttachment() {
