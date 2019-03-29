@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using GMI.Api.Contract;
-using GMI.Api.Contract.Data;
+using GMI.Api.Contract.Data.Company;
+using GMI.Api.Contract.Data.Country;
+using GMI.Api.Contract.Data.Currency;
+using GMI.Api.Contract.Data.Document;
 using GMI.Api.Contract.Data.Requests;
-using Newtonsoft.Json;
+using GMI.Api.Contract.Data.Status;
 using RestSharp;
 
 namespace GMI.Api
@@ -45,17 +48,17 @@ namespace GMI.Api
             return result.Data;
         }
 
-        public void GetCompany()
+        public void GetCompany(GetCompanyRequest request)
         {
             throw new System.NotImplementedException();
         }
 
-        public void ListDocuments()
+        public void ListDocuments(ListDocumentsRequest request)
         {
             throw new System.NotImplementedException();
         }
 
-        public void GetDocument()
+        public void GetDocument(GetDocumentRequest request)
         {
             throw new System.NotImplementedException();
         }
@@ -70,12 +73,12 @@ namespace GMI.Api
             throw new System.NotImplementedException();
         }
 
-        public void GetCountries()
+        public void GetCountries(GetCountriesRequest request)
         {
             throw new System.NotImplementedException();
         }
 
-        public void GetCurrencies()
+        public void GetCurrencies(GetCurrenciesRequest request)
         {
             throw new System.NotImplementedException();
         }

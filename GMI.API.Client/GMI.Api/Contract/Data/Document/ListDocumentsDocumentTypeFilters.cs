@@ -1,4 +1,4 @@
-namespace GMI.Api.Contract.Data.Requests.ListDocuments {
+namespace GMI.Api.Contract.Data.Document {
   /// <summary>
   /// Used to filter documentTypes
   /// </summary>

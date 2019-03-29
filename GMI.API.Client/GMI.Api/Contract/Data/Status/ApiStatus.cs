@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace GMI.Api.Contract.Data
+namespace GMI.Api.Contract.Data.Status
 {
     public class ApiStatus
     {

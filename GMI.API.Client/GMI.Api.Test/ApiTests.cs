@@ -2,8 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using GMI.Api.Contract;
-using GMI.Api.Contract.Data;
-using System.IO;
+using GMI.Api.Contract.Data.Company;
 
 namespace GMI.Api.Test
 {

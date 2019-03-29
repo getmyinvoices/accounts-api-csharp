@@ -1,6 +1,7 @@
+using GMI.Api.Contract.Data.Requests;
 using Newtonsoft.Json;
 
-namespace GMI.Api.Contract.Data.Requests {
+namespace GMI.Api.Contract.Data.Document {
   /// <summary>
   /// Request used to fetch a single document
   /// </summary>

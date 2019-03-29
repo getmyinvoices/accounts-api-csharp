@@ -1,7 +1,10 @@
 using Newtonsoft.Json;
 
-namespace GMI.Api.Contract.Data
+namespace GMI.Api.Contract.Data.Company
 {
+  /// <summary>
+  /// Company from the ListCompaniesResponse
+  /// </summary>
     public class CompanyListElement
     {
         [JsonProperty("prim_uid")]
@@ -19,6 +22,9 @@ namespace GMI.Api.Contract.Data
         [JsonProperty("tags")]
         public string Tags { get; set; }
 
+        /// <summary>
+        /// ctor
+        /// </summary>
         public CompanyListElement()
         {
         }

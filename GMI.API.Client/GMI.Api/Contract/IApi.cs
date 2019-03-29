@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using GMI.Api.Contract.Data;
-using GMI.Api.Contract.Data.Requests;
-using GMI.Api.Contract.Data.Requests.ListDocuments;
+using GMI.Api.Contract.Data.Company;
+using GMI.Api.Contract.Data.Country;
+using GMI.Api.Contract.Data.Currency;
+using GMI.Api.Contract.Data.Document;
 
 namespace GMI.Api.Contract {
   /// <summary>

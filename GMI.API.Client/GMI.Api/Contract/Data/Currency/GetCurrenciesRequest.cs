@@ -1,4 +1,6 @@
-namespace GMI.Api.Contract.Data.Requests {
+using GMI.Api.Contract.Data.Requests;
+
+namespace GMI.Api.Contract.Data.Currency {
   /// <summary>
   /// Used to fetch a list of currencies
   /// </summary>
