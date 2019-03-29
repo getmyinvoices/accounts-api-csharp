@@ -1,17 +1,16 @@
 using Newtonsoft.Json;
 
-namespace GMI.Api.Contract.Data
-{
-    public class BaseRequest
-    {
-        [JsonProperty("api_key")]
-        public string ApiKey { get; set; }
+namespace GMI.Api.Contract.Data.Requests {
+  public class BaseRequest {
+    [JsonProperty("api_key")]
+    public string ApiKey { get; set; }
 
-        
-        public BaseRequest(string apiKey)
-        {
-            ApiKey = apiKey;
-        }
+    /// <summary>
+    /// ctor
+    /// </summary>
+    /// <param name="apiKey">key of account</param>
+    public BaseRequest(string apiKey) {
+      this.ApiKey = apiKey;
     }
-    
+  }
 }

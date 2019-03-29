@@ -50,7 +50,7 @@ namespace GMI.Api
             throw new System.NotImplementedException();
         }
 
-        public void GetDocuments()
+        public void ListDocuments()
         {
             throw new System.NotImplementedException();
         }
