@@ -16,7 +16,7 @@ namespace GMI.Api.Test
         public static void Initialize()
         {
             string secret = Environment.GetEnvironmentVariable("GMI_API_KEY");
-            ApiTests._client = new Api(ApiTests._url, secret);
+            ApiTests._client = new Client(ApiTests._url, secret);
         }
 
         [TestMethod]
