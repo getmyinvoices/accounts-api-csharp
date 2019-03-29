@@ -19,17 +19,33 @@ namespace GMI.Api.Contract {
     /// <param name="request">Request is used to apply filers</param>
     /// <returns>A list of companies</returns>
     IEnumerable<CompanyListElement> ListCompanies(ListCompaniesRequest request);
-    void GetCompany();
+    /// <summary>
+    /// Returns the company
+    /// </summary>
+    /// <param name="request">Request is used to apply a filter</param>
+    void GetCompany(GetCompanyRequest request);
     /// <summary>
     /// Returns a list of documents using the provided filters
     /// </summary>
     /// <param name="request">Request is used to apply filters</param>
     void ListDocuments(ListDocumentsRequest request);
-    void GetDocument();
+    /// <summary>
+    /// Returns the searched document
+    /// </summary>
+    /// <param name="request">Request is used to apply filters</param>
+    void GetDocument(GetDocumentRequest request);
     void UploadDocument();
     void UpdateDocument();
-    void GetCuntries();
-    void GetCurrencies();
+    /// <summary>
+    /// Returns a list of countries
+    /// </summary>
+    /// <param name="request"></param>
+    void GetCountries(GetCountriesRequest request);
+    /// <summary>
+    /// Returns a list of currencies
+    /// </summary>
+    /// <param name="request"></param>
+    void GetCurrencies(GetCurrenciesRequest request);
     void AddCompany();
     void UpdateCompany();
     void DeleteCompany();

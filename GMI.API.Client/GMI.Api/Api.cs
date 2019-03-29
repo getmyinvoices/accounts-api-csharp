@@ -70,7 +70,7 @@ namespace GMI.Api
             throw new System.NotImplementedException();
         }
 
-        public void GetCuntries()
+        public void GetCountries()
         {
             throw new System.NotImplementedException();
         }
