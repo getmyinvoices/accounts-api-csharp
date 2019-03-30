@@ -9,8 +9,7 @@ namespace GMI.Api.Contract.Data.Currency {
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
-    public GetCurrenciesRequest(string apiKey) : base(apiKey) {
+    public GetCurrenciesRequest() {
     }
   }
 }

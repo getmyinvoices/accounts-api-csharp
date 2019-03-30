@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using GMI.Api.Contract;
 using GMI.Api.Contract.Data.Company;
+using GMI.Api.Contract.Data.Country;
 
 namespace GMI.Api.Test
 {
@@ -10,13 +11,13 @@ namespace GMI.Api.Test
     public class ApiTests
     {
         private static IApi _client;
-        private const string _url = "https://api.getmyinvoices.com/accounts/v2";
+        private const string Url = "https://api.getmyinvoices.com/accounts/v2";
 
-        [ClassInitialize]
-        public static void Initialize()
+        [ClassInitialize] 
+        public static void Initialize(TestContext testContext)
         {
             string secret = Environment.GetEnvironmentVariable("GMI_API_KEY");
-            ApiTests._client = new Client(ApiTests._url, secret);
+            ApiTests._client = new Client(Url, secret);
         }
 
         [TestMethod]
@@ -40,7 +41,7 @@ namespace GMI.Api.Test
         [TestMethod]
         public void GetApiStatus()
         {           
-            bool status = ApiTests._client.GetApiStatus();
+            bool status = _client.GetApiStatus();
             Assert.IsTrue(status);
         }
 
@@ -53,19 +54,18 @@ namespace GMI.Api.Test
         [TestMethod]
         public void ListCompanies()
         {            
-            IEnumerable<CompanyListElement> result = ApiTests._client.ListCompanies(null);
+            IEnumerable<CompanyListElement> result = _client.ListCompanies(new ListCompaniesRequest());
         }
 
         [TestMethod]
-        public void GetCompany()
-        {
-            throw new System.NotImplementedException();
+        public void GetCompany() {
+          Company result = _client.GetCompany(new GetCompanyRequest(1234));
         }
 
         [TestMethod]
-        public void GetCuntries()
+        public void GetCountries()
         {
-            throw new System.NotImplementedException();
+            _client.GetCountries(new GetCountriesRequest());
         }
 
         [TestMethod]

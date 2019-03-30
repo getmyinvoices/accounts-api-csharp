@@ -19,7 +19,7 @@ namespace GMI.Api.Contract.Data.Attachment {
     /// </summary>
     /// <param name="apiKey">API key of account</param>
     /// <param name="documentId">PRIM_UID of the invoice.</param>
-    public ListAttachmentsRequest(string apiKey, int documentId) : base(apiKey) {
+    public ListAttachmentsRequest(int documentId) {
       this.DocumentId = documentId;
     }
   }

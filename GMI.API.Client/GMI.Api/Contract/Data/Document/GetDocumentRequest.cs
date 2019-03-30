@@ -28,11 +28,10 @@ namespace GMI.Api.Contract.Data.Document {
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
     /// <param name="documentId">PRIM_UID of the document.</param>
     /// <param name="loadLineItems">Set to true if you want to receive line items as well</param>
     /// <param name="readableText">Set to true if you want to receive readable text from document</param>
-    public GetDocumentRequest(string apiKey, int documentId, bool loadLineItems, bool readableText) : base(apiKey) {
+    public GetDocumentRequest(int documentId, bool loadLineItems, bool readableText) {
       this.DocumentId = documentId;
       this.LoadLineItems = loadLineItems;
       this.GetReadableText = readableText;

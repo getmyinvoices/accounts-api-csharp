@@ -16,5 +16,4 @@ namespace GMI.Api.Contract.Data.Status {
     public ApiStatus() {
     }
   }
-
 }

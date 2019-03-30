@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using GMI.Api.Contract.Data.Attachment;
 using GMI.Api.Contract.Data.Company;
 using GMI.Api.Contract.Data.Country;
 using GMI.Api.Contract.Data.Currency;
@@ -50,7 +51,7 @@ namespace GMI.Api.Contract {
     void AddCompany();
     void UpdateCompany();
     void DeleteCompany();
-    void GetAttachmentList();
+    void GetAttachmentList(ListAttachmentsRequest request);
     void UploadAttachment();
     void DeleteAttachment();
   }

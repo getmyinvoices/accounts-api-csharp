@@ -16,9 +16,8 @@ namespace GMI.Api.Contract.Data.Company {
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
     /// <param name="companyId">PRIM_UID of the company.</param>
-    public GetCompanyRequest(string apiKey, int companyId) : base(apiKey) {
+    public GetCompanyRequest(int companyId) {
       this.CompanyId = companyId;
     }
   }

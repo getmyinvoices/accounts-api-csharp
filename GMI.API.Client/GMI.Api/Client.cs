@@ -27,7 +27,8 @@ namespace GMI.Api {
       this._client = new RestClient(baseUrl);
     }
 
-    private RestRequest getRequest(string method, object postBody) {
+    private RestRequest getRequest(string method, BaseRequest postBody) {
+      postBody.Initialize(this._apiKey);
       var request = new RestRequest(method, Method.POST);
       request.AddHeader("Accept", "application/json");
       request.AddHeader("Content-type", "application/json");
@@ -39,7 +40,7 @@ namespace GMI.Api {
 
     /// <inheritdoc />
     public bool GetApiStatus() {
-      RestRequest request = getRequest("/apiStatus", new BaseRequest(this._apiKey));
+      RestRequest request = getRequest("/apiStatus", new BaseRequest());
       IRestResponse<ApiStatus> result = this._client.Execute<ApiStatus>(request);
       return result.Data.Success;
     }
@@ -98,7 +99,7 @@ namespace GMI.Api {
     /// <inheritdoc />
     public void GetAttachmentList(ListAttachmentsRequest request) {
       RestRequest restRequest = getRequest("/listAttachments", request);
-      IRestResponse<List<Country>> result = this._client.Execute<List<Country>>(restRequest);
+      IRestResponse response = this._client.Execute(restRequest);
     }
     /// <inheritdoc />
     public void UploadAttachment() {

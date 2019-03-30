@@ -9,8 +9,7 @@ namespace GMI.Api.Contract.Data.Country {
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
-    public GetCountriesRequest(string apiKey) : base(apiKey) {
+    public GetCountriesRequest() {
     }
   }
 }

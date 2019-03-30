@@ -24,8 +24,7 @@ namespace GMI.Api.Contract.Data.Company {
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
-    public ListCompaniesRequest(string apiKey) : base(apiKey) {
+    public ListCompaniesRequest() {
       this.State = ListCompaniesStates.Any;
       this.CompanyTypeFilter = "0";
     }
@@ -34,10 +33,9 @@ namespace GMI.Api.Contract.Data.Company {
     /// <summary>
     /// ctor with filter parameters
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
     /// <param name="state"></param>
     /// <param name="companyTypeFilter">Possible values: 0 = Any, ONLINE_PORTAL = Online-Portal only, CUSTOM_COMPANY = Custom company only</param>
-    public ListCompaniesRequest(string apiKey, ListCompaniesStates state, CompanyTypeFilters companyTypeFilter) : base(apiKey) {
+    public ListCompaniesRequest(ListCompaniesStates state, CompanyTypeFilters companyTypeFilter) {
       this.State = state;
 
       switch (companyTypeFilter) {

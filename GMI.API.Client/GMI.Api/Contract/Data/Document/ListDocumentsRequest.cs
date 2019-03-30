@@ -71,15 +71,13 @@ namespace GMI.Api.Contract.Data.Document {
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
-    public ListDocumentsRequest(string apiKey) : base(apiKey) {
+    public ListDocumentsRequest()  {
     }
 
     /// <inheritdoc />
     /// <summary>
     /// ctor
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
     /// <param name="companyFilter">Filter by company</param>
     /// <param name="archivedFilter">Filter archived documents</param>
     /// <param name="documentTypeFilter">Document type</param>
@@ -90,7 +88,7 @@ namespace GMI.Api.Contract.Data.Document {
     /// <param name="idExclusionFilter">Comma separated list of prim_uids that should not be in the results</param>
     /// <param name="primUidStartFilter">prim_uid that can be used to limit result to only higher prim_uids</param>
     /// <param name="updateOrNewSinceDateFilter">Limit result to documents modified or created after given date.</param>
-    public ListDocumentsRequest(string apiKey, ListDocumentCompanyFilters companyFilter = ListDocumentCompanyFilters.Any, ListDocumentArchivedFilters archivedFilter = ListDocumentArchivedFilters.Any, ListDocumentsDocumentTypeFilters documentTypeFilter = ListDocumentsDocumentTypeFilters.Any, string documentNumberFilter = null, string noteFilter = null, string startDateFilter = null, string endDate = null, string idExclusionFilter = null, int primUidStartFilter = 0, string updateOrNewSinceDateFilter = null) : base(apiKey) {
+    public ListDocumentsRequest(ListDocumentCompanyFilters companyFilter = ListDocumentCompanyFilters.Any, ListDocumentArchivedFilters archivedFilter = ListDocumentArchivedFilters.Any, ListDocumentsDocumentTypeFilters documentTypeFilter = ListDocumentsDocumentTypeFilters.Any, string documentNumberFilter = null, string noteFilter = null, string startDateFilter = null, string endDate = null, string idExclusionFilter = null, int primUidStartFilter = 0, string updateOrNewSinceDateFilter = null)  {
       this.CompanyFilter = companyFilter;
       this.ArchivedFilter = archivedFilter;
       this.DocumentNumberFilter = documentNumberFilter;

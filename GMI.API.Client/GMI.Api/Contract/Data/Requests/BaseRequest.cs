@@ -12,10 +12,10 @@ namespace GMI.Api.Contract.Data.Requests {
     public string ApiKey { get; set; }
 
     /// <summary>
-    /// ctor
+    /// Initializes the request using the given key
     /// </summary>
-    /// <param name="apiKey">API key of account</param>
-    public BaseRequest(string apiKey) {
+    /// <param name="apiKey">API Key</param>
+    public void Initialize(string apiKey) {
       this.ApiKey = apiKey;
     }
   }
